@@ -1,0 +1,55 @@
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build CookScape (WinBGIm)",
+            "type": "process",
+            "command": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\g++.exe",
+            "args": [
+                "-std=c++17",
+                "-g",
+
+                "${workspaceFolder}\\src\\main.cpp",
+
+                "${workspaceFolder}\\src\\modules\\restaurant.cpp",
+                "${workspaceFolder}\\src\\modules\\customer.cpp",
+                "${workspaceFolder}\\src\\modules\\menu.cpp",
+
+                "${workspaceFolder}\\src\\graphics\\restaurant_graphics.cpp",
+                "${workspaceFolder}\\src\\graphics\\table_graphics.cpp",
+                "${workspaceFolder}\\src\\graphics\\food_graphics.cpp",
+
+                "-o",
+                "${workspaceFolder}\\build\\main.exe",
+
+                "-I",
+                "${workspaceFolder}\\src",
+
+                "-I",
+                "C:\\Program Files\\CodeBlocks\\MinGW\\include",
+
+                "-L",
+                "C:\\Program Files\\CodeBlocks\\MinGW\\lib",
+
+                "-lbgi",
+                "-lgdi32",
+                "-lcomdlg32",
+                "-luuid",
+                "-loleaut32",
+                "-lole32"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "PATH": "C:\\Program Files\\CodeBlocks\\MinGW\\bin;${env:PATH}"
+                }
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
